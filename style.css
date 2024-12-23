@@ -13,3 +13,39 @@ body{
     text-decoration: none;
     list-style: none;
 }
+:root{
+    --border-color: #fff5;
+    --w-image: 500px;
+    --calculate: calc(3 / 2);
+}
+header{
+    display: grid;
+    grid-template-columns: 80px 1fr calc(var(--w-image) * var(--calculate));
+    grid-template-rows: 80px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px #fff5;
+}
+header .logo img{
+    width: 80%;
+}
+header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav a{
+    color: #000;
+    font-weight: 400;
+}
+header nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 30px;
+    padding-right: 30px;
+}
+header nav{
+    border-left: 1px solid var(--border-color);
+}
