@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body{
     font-family: Poppins;
     margin: 0;
     font-size: 16px;
-    background-color: #4f8b69;
+    background-color: #E8F5E9;
 }
 *{
     box-sizing: border-box;
@@ -14,7 +15,7 @@ body{
     list-style: none;
 }
 :root{
-    --border-color: #fff5;
+    background-color: #E8F5E9;
     --w-image: 500px;
     --calculate: calc(3 / 2);
 }
@@ -25,6 +26,7 @@ header{
     position: relative;
     z-index: 10;
     border-bottom: 1px solid var(--border-color);
+    background-color: #FFFFFF;
 }
 header .logo img{
     width: 80%;
@@ -35,8 +37,12 @@ header .logo{
     align-items: center;
 }
 header nav a{
-    color: #000;
-    font-weight: 400;
+    color: #2E7D32; 
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+header nav a:hover {
+    color: #66BB6A; 
 }
 header nav ul{
     height: 100%;
@@ -76,14 +82,14 @@ header nav{
     top: 50px;
     left: 50px;
     content: '';
-    background-color: red;
+    background-color: #4CAF50;
     width: 400px;
     height: 300px;
     z-index: 10;
     pointer-events: none;
     border-radius: 20px  50px 110px  230px;
     filter: blur(150px);
-    opacity: .6;
+    opacity: .4;
 }
 .carousel .list .item{
     position: absolute;
@@ -108,15 +114,16 @@ header nav{
 .carousel .list .item .image img{
     width: 90%;
     margin-bottom: 20px;
-    filter: drop-shadow(0 150px 50px #9e0c0c55);
+    filter: drop-shadow(0 150px 50px #2E7D3255);
 }
 .carousel .list .item .image figcaption{
-    font-family: 'Aboreto';
+    font-family: 'Roboto Slab';
     font-weight: bold;
     font-size: 1.3em;
     text-align: right;
     margin-bottom: 30px;
     width: 70%;
+    color: #1B5E20;
 }
 .carousel .list .item .main-content{
     height: 100%;
@@ -125,26 +132,41 @@ header nav{
 }
 .carousel .list .item .main-content .content{
     padding: 150px 20px  20px 80px;
+    color: #fff;
 }
 .carousel .list .item .main-content .content h2{
-    font-size: 5em;
-    font-family: 'Aboreto';
+    font-size: 4em;
+    font-family: 'Roboto Slab';
+    margin-bottom: 20px;
 }
 .carousel .list .item .main-content .content .price{
-    font-family: 'Aboreto';
+    font-family: 'Roboto Slab';
     font-size: 3em;
-    margin: 20px 0;
+    margin: 20px;
+    color: #E8F5E9;
+}
+.carousel .list .item .main-content .content .description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 .carousel .list .item .main-content .content .addToCard{
-    background-color: #4f8b69;
-    color: #fff;
-    padding: 10px  30px;
+    background-color: #FFF;
+    color: #2E7D32;
+    padding: 12px 35px;
     font-family: Poppins;
-    font-size: large;
-    font-weight: 500;
+    font-size: 1.1em;
+    font-weight: 600;
     border-radius: 30px;
     border: none;
     margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.carousel .list .item .main-content .content .addToCard:hover {
+    background-color: #E8F5E9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .arrows{
     position: absolute;
@@ -168,8 +190,9 @@ header nav{
     cursor: pointer;
     transition: 0.5s;
 }
-.arrows button:hover{
-    background-color: #eee5;
+.arrows button:hover {
+    background-color: #FFF;
+    color: #2E7D32;
 }
 .carousel .list .item{
     display: none;
@@ -267,15 +290,15 @@ header nav{
         left: 0;
         justify-content: center;
     }
-    .carousel .list .item .image figcaption{
-        color: #fff;
+    .carousel .list .item .image figcaption {
+        color: #1B5E20;
         width: 100%;
         text-align: center;
     }
-    .carousel .list .item .main-content .content{
+    .carousel .list .item .main-content .content {
         display: none;
     }
-    .arrows{
+    .arrows {
         left: 50%;
         justify-content: center;
     }
