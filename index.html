@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FARMA SMART</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-    
+
     <header>
         <figure class="logo">
-            <img src="images/farm-logo.png" alt="Farmer's Marketplace Logo"> <!-- this line is referencing to the folder image and there needs to be an image file labelled farm-logo.png but haiko. So correct it. D the same for the rest -->
+            <img src="images/farm-logo.png" alt="Farmer's Marketplace Logo">
         </figure>
         <nav class="main-nav">
             <ul>
@@ -24,87 +27,81 @@
 
     <main>
         <section class="carousel next">
-            <div class="list">
-                <article class="item other_1">
-                    <div class="main-content" 
-                    style="background-color: #2e7a32;">
-                        <div class="content">
-                            <h2>Organic Nitrogen Fertilizer</h2>
-                            <p class="price">$ 45.90</p>
-                            <p class="description">
-                                Premium organic nitrogen fertilizer perfect for promoting leafy growth. Ideal for vegetables and grains. Contains beneficial soil microbes and sustainable ingredients for long-term soil health.
-                            </p>
-                            <button class="addToCard">
-                                Add To Cart
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/fertilizer.png" alt="Organic Fertilizer">
-                        <figcaption>Organic Nitrogen Fertilizer, Premium</figcaption>
-                    </figure>
-                </article>
-                <article class="item active">
-                    <div class="main-content" style="background-color: #388E3C;">
-                        <div class="content">
-                            <h2>Pro Garden tool Set</h2>
-                            <p class="price">$ 99.99</p>
-                            <p class="description">
-                                Complete gardening tool set including pruning shears, trowel, fork, and weeder. Made with high-quality stainless steel and ergonomic handles for comfort during extended use.
-                            </p>
-                            <button class="addToCard">
-                                Add To Cart
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/tools.png" alt="Garden Tools">
-                        <figcaption>Profarm Garden Tool Set</figcaption>
-                    </figure>
-                </article>
-                <article class="item other_2">
-                    <div class="main-content" style="background-color: #7bf081;">
-                        <div class="content">
-                            <h2>Farma Drip Irrigation System</h2>
-                            <p class="price">$ 169.99</p>
-                            <p class="description">
-                                Water-efficient drip irrigation system with smart timer. Covers up to 1/4 acre with adjustable water flow. Includes filters, pressure regulators, and easy-connect fittings.
-                            </p>
-                            <button class="addToCard">
-                                Add To Cart
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/irrigation.png" alt="Irrigation System">
-                        <figcaption>Farma Smart Drip Irrigation Sys</figcaption>
-                    </figure>
-                </article>
-                <article class="item">
-                    <div class="main-content" style="background-color: #4CAF50;">
-                        <div class="content">
-                            <h2>Farma Smart Seed Collection</h2>
-                            <p class="price">$ 79.99</p>
-                            <p class="description">
-                                Non-GMO, heirloom vegetable seed collection including tomatoes, peppers, lettuce, and herbs. All seeds are certified organic and come with detailed planting instructions.                            </p>
-                            <button class="addToCard">
-                                Add To Cart
-                            </button>
-                        </div>
-                    </div>
-                    <figure class="image">
-                        <img src="images/seeds.png" alt="Organic Seeds">
-                        <figcaption>Farma Smart Organic Seed Collection</figcaption>
-                    </figure>
-                </article>
+            <div class="list" id="product-list">
+                <!-- Products will be inserted here by JavaScript -->
             </div>
             <div class="arrows">
-                <button id="prev"><</button>
-                <button id="next">></button>
+                <button id="prev"><i class="fas fa-chevron-left"></i></button>
+                <button id="next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
     </main>
 
+    <script>
+        const products = [
+            {
+                title: "Organic Nitrogen Fertilizer",
+                price: "$ 45.90",
+                description: "Premium organic nitrogen fertilizer perfect for promoting leafy growth. Ideal for vegetables and grains. Contains beneficial soil microbes and sustainable ingredients for long-term soil health.",
+                image: "images/fertilizer.png",
+                alt: "Organic Fertilizer",
+                figcaption: "Organic Nitrogen Fertilizer, Premium",
+                backgroundColor: "#2e7a32"
+            },
+            {
+                title: "Pro Garden tool Set",
+                price: "$ 99.99",
+                description: "Complete gardening tool set including pruning shears, trowel, fork, and weeder. Made with high-quality stainless steel and ergonomic handles for comfort during extended use.",
+                image: "images/tools.png",
+                alt: "Garden Tools",
+                figcaption: "Profarm Garden Tool Set",
+                backgroundColor: "#388E3C"
+            },
+            {
+                title: "Farma Drip Irrigation System",
+                price: "$ 169.99",
+                description: "Water-efficient drip irrigation system with smart timer. Covers up to 1/4 acre with adjustable water flow. Includes filters, pressure regulators, and easy-connect fittings.",
+                image: "images/irrigation.png",
+                alt: "Irrigation System",
+                figcaption: "Farma Smart Drip Irrigation Sys",
+                backgroundColor: "#7bf081"
+            },
+            {
+                title: "Farma Smart Seed Collection",
+                price: "$ 79.99",
+                description: "Non-GMO, heirloom vegetable seed collection including tomatoes, peppers, lettuce, and herbs. All seeds are certified organic and come with detailed planting instructions.",
+                image: "images/seeds.png",
+                alt: "Organic Seeds",
+                figcaption: "Farma Smart Organic Seed Collection",
+                backgroundColor: "#4CAF50"
+            }
+        ];
+
+        const productList = document.getElementById('product-list');
+
+        products.forEach((product, index) => {
+            const article = document.createElement('article');
+            article.className = `item ${index === 1 ? 'active' : ''}`;
+            article.innerHTML = `
+                <div class="main-content" style="background-color: ${product.backgroundColor};">
+                    <div class="content">
+                        <h2>${product.title}</h2>
+                        <p class="price">${product.price}</p>
+                        <p class="description">${product.description}</p>
+                        <button class="addToCard">
+                            ${index === 1 ? '<i class="fas fa-cart-plus"></i>' : ''} Add To Cart
+                        </button>
+                    </div>
+                </div>
+                <figure class="image">
+                    <img src="${product.image}" alt="${product.alt}">
+                    <figcaption>${product.figcaption}</figcaption>
+                </figure>
+            `;
+            productList.appendChild(article);
+        });
+    </script>
     <script src="app.js"></script>
 </body>
+
 </html>
