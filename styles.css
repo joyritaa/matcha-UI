@@ -6,32 +6,9 @@
 
 
 
-.arrows{
-    position: absolute;
-    bottom: 20px;
-    width: calc(100% - calc(var(--w-image) * var(--calculate)));
-    display: grid;
-    grid-template-columns: repeat(2, 50px);
-    grid-template-rows: 50px;
-    justify-content: end;
-    gap: 10px;
-}
-.arrows button{
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    color: #fff;
-    font-family: monospace;
-    font-size: large;
-    font-weight: bold;
-    line-height: 0;
-    box-shadow: 0 10px 40px #5555;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.arrows button:hover {
-    background-color: #FFF;
-    color: #2E7D32;
-}
+
+
+
 .carousel .list .item{
     display: none;
 }
