@@ -1,41 +1,6 @@
 
 
-header{
-    display: grid;
-    grid-template-columns: 80px 1fr calc(var(--w-image) * var(--calculate));
-    grid-template-rows: 80px;
-    position: relative;
-    z-index: 10;
-    border-bottom: 1px solid var(--border-color);
-    background-color: #FFFFFF;
-}
-header .logo img{
-    width: 80%;
-}
-header .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header nav a{
-    color: #2E7D32; 
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-header nav a:hover {
-    color: #66BB6A; 
-}
-header nav ul{
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 30px;
-    padding-right: 30px;
-}
-header nav{
-    border-left: 1px solid var(--border-color);
-}
+
 .carousel{
     margin-top: -80px;
     width: 100%;
