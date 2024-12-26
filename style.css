@@ -32,6 +32,7 @@ header .logo{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 header .logo img{
     width: 80%;
