@@ -7,7 +7,6 @@ This project's index page serves as the primary entry point for users. It provid
 
 Table of Contents
 -----------------
-
 * [Features](#features)
 * [Getting Started](#getting-started)
 * [Installation](#installation)
