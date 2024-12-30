@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +19,12 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="fertilizers.html">Fertilizers</a></li>
-                <li><a href="">Tools</a></li>
+                <li><a href="tools.html">Tools</a></li>
                 <li><a href="">Seeds</a></li>
                 <li><a href="">Pesticides</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         <section class="carousel next">
             <div class="list" id="product-list">
@@ -78,9 +76,8 @@
                 backgroundColor: "#4CAF50"
             }
         ];
-        
-        const productList = document.getElementById('product-list');
 
+        const productList = document.getElementById('product-list');
         products.forEach((product, index) => {
             const article = document.createElement('article');
             article.className = `item ${index === 1 ? 'active' : ''}`;
